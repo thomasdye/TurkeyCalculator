@@ -6,4 +6,4 @@
 <img src="Turkey Calculator.gif" height="500px">
 
 ### v2.0 aka dope ass features included
-<img srv="TurkeyCalculator2.gif" height="500px">
+<img src="TurkeyCalculator2.gif" height="500px">
