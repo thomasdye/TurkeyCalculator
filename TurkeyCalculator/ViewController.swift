@@ -17,9 +17,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var metricButton: UIButton!
     
+    @IBOutlet weak var calculateButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        calculateButton.layer.cornerRadius = 4
+        
     }
 
     @IBAction func calculateButtonPressed(_ sender: Any) {

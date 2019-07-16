@@ -72,7 +72,10 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlM-Yq-rRy">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
-                                                <state key="normal" title="Calculate"/>
+                                                <color key="backgroundColor" red="0.26715088128499886" green="0.44689080332881115" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Calculate">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fD4-E3-RgT"/>
                                                 </connections>
@@ -101,6 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="calculateButton" destination="PlM-Yq-rRy" id="caP-8L-Xjj"/>
                         <outlet property="cookTimeTextField" destination="ssG-OP-cbR" id="duz-pP-r27"/>
                         <outlet property="metricButton" destination="0ay-8g-lpS" id="zAY-uS-Xrk"/>
                         <outlet property="turkeyWeightLabel" destination="dxo-mU-dl5" id="t1H-Af-Os1"/>
