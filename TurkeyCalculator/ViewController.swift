@@ -37,7 +37,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        calculateButton.layer.cornerRadius = 4
         metricButton.layer.cornerRadius = 4
         stepperButton.wraps = true
         stepperButton.autorepeat = true
@@ -46,12 +45,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
         switchButton.isOn = false
         webView = WKWebView()
         webView.navigationDelegate = self
+        stepperButton.stepValue = 1
+        turkeyWeightTextField.text = "0"
     }
     
     @IBAction func calculateButtonPressed(_ sender: Any) {
-        
         guard let turkeyWeightString = turkeyWeightTextField.text else { return }
-        
         guard let turkeyWeight = Double(turkeyWeightString) else {
             print("Invalid number")
             return
@@ -59,6 +58,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         }
         
         var durationInMinutes: Double
+        
         if metricButton.isSelected {
             durationInMinutes = cookTimeInKilograms(turkeyWeight)
             turkeyWeightLabel.text = "Turkey Weight (kg):"
@@ -87,21 +87,25 @@ class ViewController: UIViewController, WKNavigationDelegate {
         }
         return durationInMinutes
     }
+    
     @IBAction func metricButtonPressed(_ sender: Any) {
-        
         guard let button = sender as? UIButton else { return }
         
         button.isSelected.toggle()
         if button.isSelected {
             turkeyWeightLabel.text = "Turkey Weight (kg):"
+            calculateButtonPressed((Any).self)
         } else {
             turkeyWeightLabel.text = "Turkey Weight (lb):"
+            calculateButtonPressed((Any).self)
         }
         
     }
+    
     @IBAction func stepperButtonPressed(_ sender: UIStepper!) {
         
         turkeyWeightTextField.text = Int(stepperButton.value).description
+        calculateButtonPressed((Any).self)
     }
     
     @IBAction func switchButtonPressed(_ sender: Any) {
@@ -126,9 +130,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func secretButtonPressed(_ sender: Any) {
-        func goBack() {
-            
-        }
         view = webView
         let url = URL(string: "https://www.thomasdye.me")!
         webView.load(URLRequest(url: url))
