@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var turkeyWeightLabel: UILabel!
     
     @IBOutlet weak var turkeyWeightTextField: UITextField!
@@ -28,6 +29,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var switchButton: UISwitch!
     
     @IBOutlet weak var darkModeLabel: UILabel!
+    
+    @IBOutlet weak var secretButton: UIButton!
+    
+    var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,8 +44,10 @@ class ViewController: UIViewController {
         stepperButton.maximumValue = 30
         stepperButton.minimumValue = 0
         switchButton.isOn = false
+        webView = WKWebView()
+        webView.navigationDelegate = self
     }
-
+    
     @IBAction func calculateButtonPressed(_ sender: Any) {
         
         guard let turkeyWeightString = turkeyWeightTextField.text else { return }
@@ -104,7 +112,6 @@ class ViewController: UIViewController {
             appTitle.textColor = .white
             appTitle.backgroundColor = .black
             darkModeLabel.textColor = .white
-            
         } else {
             self.view.backgroundColor = .white
             turkeyWeightLabel.textColor = .black
@@ -114,7 +121,15 @@ class ViewController: UIViewController {
             darkModeLabel.textColor = .black
 
         }
+        
+        
     }
     
+    @IBAction func secretButtonPressed(_ sender: Any) {
+        view = webView
+        let url = URL(string: "https://www.thomasdye.me")!
+        webView.load(URLRequest(url: url))
+        webView.allowsBackForwardNavigationGestures = true
+    }
 }
 
