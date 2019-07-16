@@ -10,3 +10,6 @@
 
 ### v3.0 aka dope ass features + bonus features
 <img src="TurkeyCalculator3.gif" height="500px">
+
+### v4.0 aka making it easy. no need to press calculate
+<img src="TurkeyCalculator4.gif" height="500px">
