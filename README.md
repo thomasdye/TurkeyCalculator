@@ -1,5 +1,5 @@
 # TurkeyCalculator
 
-## Create Calculator that converts Turkey Weight in pounds and kilograms to minutes
+### Create Calculator that converts Turkey Weight in pounds and kilograms to cook time in minutes
 
 <img src="Turkey Calculator.gif" height="500px">
