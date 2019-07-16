@@ -23,44 +23,50 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heT-V5-akq">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="390" id="u1C-fS-P6G"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-WV-4nq">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="46.5"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jNI-zB-RID">
-                                        <rect key="frame" x="0.0" y="108" width="390" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="104.5" width="390" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey Weight (lb):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-mU-dl5">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="145" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWK-ob-O5m">
-                                                <rect key="frame" x="153" y="0.0" width="237" height="20.5"/>
+                                                <rect key="frame" x="153" y="0.0" width="135" height="29"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="vL1-sx-15t">
+                                                <rect key="frame" x="296" y="0.0" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="stepperButtonPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="eki-Bo-zXA"/>
+                                                </connections>
+                                            </stepper>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v7g-46-rGy">
-                                        <rect key="frame" x="0.0" y="136.5" width="390" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="141.5" width="390" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riA-Rm-qTb">
-                                                <rect key="frame" x="0.0" y="0.0" width="87" height="25.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ssG-OP-cbR">
-                                                <rect key="frame" x="95" y="0.0" width="295" height="25.5"/>
+                                                <rect key="frame" x="95" y="0.0" width="295" height="20.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -85,28 +91,51 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ay-8g-lpS">
-                                <rect key="frame" x="185" y="832" width="44" height="30"/>
+                                <rect key="frame" x="139" y="832" width="136" height="30"/>
                                 <state key="normal" title="Metric"/>
                                 <connections>
                                     <action selector="metricButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MpR-ai-veP"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCR-AO-4UG">
+                                <rect key="frame" x="325" y="831" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchButtonPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Qvh-2h-O2u"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbA-kI-AnV">
+                                <rect key="frame" x="307" y="802.5" width="84" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XCR-AO-4UG" firstAttribute="leading" secondItem="0ay-8g-lpS" secondAttribute="trailing" constant="50" id="Ad3-5Q-GMz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JbA-kI-AnV" secondAttribute="trailing" constant="23" id="Ggd-OX-VXH"/>
+                            <constraint firstItem="XCR-AO-4UG" firstAttribute="top" secondItem="Nic-eo-1J0" secondAttribute="bottom" constant="575" id="HFQ-XR-oZd"/>
+                            <constraint firstAttribute="trailing" secondItem="XCR-AO-4UG" secondAttribute="trailing" constant="40" id="Osh-Wq-f8X"/>
                             <constraint firstItem="Nic-eo-1J0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Rqu-Do-KHZ"/>
+                            <constraint firstItem="XCR-AO-4UG" firstAttribute="top" secondItem="JbA-kI-AnV" secondAttribute="bottom" constant="8" id="ccS-xr-RvH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0ay-8g-lpS" secondAttribute="bottom" id="fgs-By-Noy"/>
                             <constraint firstItem="0ay-8g-lpS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jbE-bP-max"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nic-eo-1J0" secondAttribute="bottom" constant="606" id="nCv-pk-hKU"/>
+                            <constraint firstItem="XCR-AO-4UG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nwJ-Uz-hFi"/>
                             <constraint firstItem="Nic-eo-1J0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="qk9-Az-o9V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nic-eo-1J0" secondAttribute="trailing" constant="12" id="sky-vQ-2nr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="appTitle" destination="heT-V5-akq" id="6VD-d6-zHh"/>
                         <outlet property="calculateButton" destination="PlM-Yq-rRy" id="caP-8L-Xjj"/>
+                        <outlet property="cookTimeLabel" destination="riA-Rm-qTb" id="SVa-g6-yuF"/>
                         <outlet property="cookTimeTextField" destination="ssG-OP-cbR" id="duz-pP-r27"/>
+                        <outlet property="darkModeLabel" destination="JbA-kI-AnV" id="A00-Bw-Usw"/>
                         <outlet property="metricButton" destination="0ay-8g-lpS" id="zAY-uS-Xrk"/>
+                        <outlet property="stepperButton" destination="vL1-sx-15t" id="Y1N-Yz-EAr"/>
+                        <outlet property="switchButton" destination="XCR-AO-4UG" id="4H3-qJ-Xog"/>
                         <outlet property="turkeyWeightLabel" destination="dxo-mU-dl5" id="t1H-Af-Os1"/>
                         <outlet property="turkeyWeightTextField" destination="VWK-ob-O5m" id="ZEN-vJ-JiK"/>
                     </connections>

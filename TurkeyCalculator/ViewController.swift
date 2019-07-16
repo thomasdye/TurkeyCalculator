@@ -13,16 +13,31 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var turkeyWeightTextField: UITextField!
     
+    @IBOutlet weak var appTitle: UILabel!
+    
+    @IBOutlet weak var cookTimeLabel: UILabel!
+    
     @IBOutlet weak var cookTimeTextField: UITextField!
 
     @IBOutlet weak var metricButton: UIButton!
     
     @IBOutlet weak var calculateButton: UIButton!
+    
+    @IBOutlet weak var stepperButton: UIStepper!
+    
+    @IBOutlet weak var switchButton: UISwitch!
+    
+    @IBOutlet weak var darkModeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         calculateButton.layer.cornerRadius = 4
-        
+        metricButton.layer.cornerRadius = 4
+        stepperButton.wraps = true
+        stepperButton.autorepeat = true
+        stepperButton.maximumValue = 30
+        stepperButton.minimumValue = 0
+        switchButton.isOn = false
     }
 
     @IBAction func calculateButtonPressed(_ sender: Any) {
@@ -75,6 +90,30 @@ class ViewController: UIViewController {
             turkeyWeightLabel.text = "Turkey Weight (lb):"
         }
         
+    }
+    @IBAction func stepperButtonPressed(_ sender: UIStepper!) {
+        
+        turkeyWeightTextField.text = Int(stepperButton.value).description
+    }
+    
+    @IBAction func switchButtonPressed(_ sender: Any) {
+        if switchButton.isOn {
+            self.view.backgroundColor = .black
+            turkeyWeightLabel.textColor = .white
+            cookTimeLabel.textColor = .white
+            appTitle.textColor = .white
+            appTitle.backgroundColor = .black
+            darkModeLabel.textColor = .white
+            
+        } else {
+            self.view.backgroundColor = .white
+            turkeyWeightLabel.textColor = .black
+            cookTimeLabel.textColor = .black
+            appTitle.textColor = .black
+            appTitle.backgroundColor = .white
+            darkModeLabel.textColor = .black
+
+        }
     }
     
 }
