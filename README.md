@@ -7,3 +7,6 @@
 
 ### v2.0 aka dope ass features included
 <img src="TurkeyCalculator2.gif" height="500px">
+
+### v3.0 aka dope ass features + bonus features
+<img src="TurkeyCalculator3.gif" height="500px">
