@@ -126,6 +126,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func secretButtonPressed(_ sender: Any) {
+        func goBack() {
+            
+        }
         view = webView
         let url = URL(string: "https://www.thomasdye.me")!
         webView.load(URLRequest(url: url))
