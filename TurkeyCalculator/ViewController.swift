@@ -66,6 +66,11 @@ class ViewController: UIViewController {
         guard let button = sender as? UIButton else { return }
         
         button.isSelected.toggle()
+        if button.isSelected {
+            turkeyWeightLabel.text = "Turkey Weight (kg):"
+        } else {
+            turkeyWeightLabel.text = "Turkey Weight (lb):"
+        }
         
     }
     
