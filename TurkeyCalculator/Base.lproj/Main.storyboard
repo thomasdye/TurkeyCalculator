@@ -83,7 +83,9 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ay-8g-lpS">
                                 <rect key="frame" x="139" y="832" width="136" height="30"/>
-                                <state key="normal" title="Metric"/>
+                                <state key="normal" title="Metric">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="metricButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MpR-ai-veP"/>
                                 </connections>

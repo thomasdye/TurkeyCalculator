@@ -22,8 +22,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var metricButton: UIButton!
     
-    @IBOutlet weak var calculateButton: UIButton!
-    
     @IBOutlet weak var stepperButton: UIStepper!
     
     @IBOutlet weak var switchButton: UISwitch!
@@ -31,6 +29,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var darkModeLabel: UILabel!
     
     @IBOutlet weak var secretButton: UIButton!
+    
     
     var webView: WKWebView!
     
@@ -41,12 +40,13 @@ class ViewController: UIViewController, WKNavigationDelegate {
         stepperButton.wraps = true
         stepperButton.autorepeat = true
         stepperButton.maximumValue = 30
-        stepperButton.minimumValue = 0
+        stepperButton.minimumValue = 1
         switchButton.isOn = false
         webView = WKWebView()
         webView.navigationDelegate = self
         stepperButton.stepValue = 1
-        turkeyWeightTextField.text = "0"
+        turkeyWeightTextField.text = "1"
+        calculateButtonPressed((Any).self)
     }
     
     @IBAction func calculateButtonPressed(_ sender: Any) {
@@ -116,6 +116,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
             appTitle.textColor = .white
             appTitle.backgroundColor = .black
             darkModeLabel.textColor = .white
+            turkeyWeightTextField.textColor = .white
+            cookTimeTextField.textColor = .white
         } else {
             self.view.backgroundColor = .white
             turkeyWeightLabel.textColor = .black
@@ -123,9 +125,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
             appTitle.textColor = .black
             appTitle.backgroundColor = .white
             darkModeLabel.textColor = .black
+            turkeyWeightTextField.textColor = .black
+            cookTimeTextField.textColor = .black
 
         }
-        
         
     }
     
@@ -136,4 +139,3 @@ class ViewController: UIViewController, WKNavigationDelegate {
         webView.allowsBackForwardNavigationGestures = true
     }
 }
-
